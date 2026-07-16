@@ -1,0 +1,496 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
+    font-family:Arial, Helvetica, sans-serif;
+
+    background:linear-gradient(135deg,#d9f3ff,#ffffff);
+
+    color:#222;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+}
+
+header{
+
+    background:#0d47a1;
+
+    color:white;
+
+    text-align:center;
+
+    padding:40px 20px;
+
+    box-shadow:0 4px 10px rgba(0,0,0,.2);
+
+}
+
+header h1{
+
+    font-size:40px;
+
+    margin-bottom:15px;
+
+}
+
+.subtitulo{
+
+    font-size:20px;
+
+}
+
+main{
+
+    flex:1;
+
+    display:flex;
+
+    flex-direction:column;
+
+    justify-content:flex-start;
+
+    align-items:center;
+
+    gap:30px;
+
+    padding:40px 20px;
+
+}
+.tarjeta{
+
+    background:white;
+
+    width:90%;
+
+    max-width:900px;
+
+    border-radius:20px;
+
+    padding:40px;
+
+    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    animation:aparecer .7s;
+
+}
+
+.tarjeta h2{
+
+    color:#1565c0;
+
+    margin-bottom:15px;
+
+}
+
+#referencia{
+
+    text-align:center;
+
+    font-weight:bold;
+
+    font-size:22px;
+
+    color:#2e7d32;
+
+    margin-bottom:15px;
+
+}
+
+#versiculo{
+
+    font-size:25px;
+
+    font-style:italic;
+
+    text-align:center;
+
+    line-height:1.8;
+
+    margin-bottom:30px;
+
+}
+
+#reflexion{
+
+    font-size:20px;
+
+    line-height:1.9;
+
+    text-align:justify;
+
+    margin-bottom:35px;
+
+}
+
+.botones{
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    justify-content:center;
+
+    gap:15px;
+
+}
+
+button{
+
+    padding:15px 28px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    font-size:18px;
+
+    transition:.3s;
+
+    background:#1565c0;
+
+    color:white;
+
+}
+
+button:hover{
+
+    transform:scale(1.05);
+
+    background:#0d47a1;
+
+}
+
+footer{
+
+    background:#eeeeee;
+
+    text-align:center;
+
+    padding:20px;
+
+    font-size:15px;
+
+}
+
+@keyframes aparecer{
+
+    from{
+
+        opacity:0;
+
+        transform:translateY(30px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+@media(max-width:700px){
+
+header h1{
+
+font-size:30px;
+
+}
+
+.subtitulo{
+
+font-size:18px;
+
+}
+
+.tarjeta{
+
+padding:25px;
+
+}
+
+#versiculo{
+
+font-size:21px;
+
+}
+
+#reflexion{
+
+font-size:18px;
+
+}
+
+button{
+
+width:100%;
+
+}
+
+}
+/* ==========================
+   MENÚ DE NAVEGACIÓN
+========================== */
+
+.menu{
+
+    position: sticky;
+
+    top: 0;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 20px;
+
+    flex-wrap: wrap;
+
+    background: #ffffff;
+
+    padding: 15px;
+
+    box-shadow: 0 2px 8px rgba(0,0,0,.1);
+
+    z-index: 1000;
+
+}
+
+.menu a{
+
+    text-decoration: none;
+
+    color: #333;
+
+    font-weight: 600;
+
+    transition: .3s;
+
+}
+
+.menu a:hover{
+
+    color: #2e7d32;
+
+}
+
+#modoOscuro{
+
+    cursor: pointer;
+
+    border: none;
+
+    background: #2e7d32;
+
+    color: white;
+
+    padding: 8px 15px;
+
+    border-radius: 8px;
+
+    font-size: 18px;
+
+}
+
+#modoOscuro:hover{
+
+    background: #1b5e20;
+
+}/* ==========================
+   MODO OSCURO
+========================== */
+
+body.oscuro{
+
+    background: #121212;
+
+    color: white;
+
+}
+
+body.oscuro .tarjeta{
+
+    background: #1f1f1f;
+
+    color: white;
+
+}
+
+body.oscuro .menu{
+
+    background: #1f1f1f;
+
+}
+
+body.oscuro .menu a{
+
+    color: white;
+
+}
+
+body.oscuro .menu a:hover{
+
+    color: #7CFC00;
+
+}/*==========================
+      CONTACTO
+==========================*/
+
+#contacto{
+
+    margin-top:40px;
+
+}
+
+#contacto form{
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:15px;
+
+}
+
+#contacto input,
+#contacto textarea{
+
+    width:100%;
+
+    padding:12px;
+
+    border:1px solid #ccc;
+
+    border-radius:8px;
+
+    font-size:16px;
+
+    font-family:inherit;
+
+}
+
+#contacto textarea{
+
+    resize:vertical;
+
+}
+
+#contacto button{
+
+    background:#2e7d32;
+
+    color:white;
+
+    border:none;
+
+    padding:12px;
+
+    border-radius:8px;
+
+    cursor:pointer;
+
+    font-size:16px;
+
+    transition:.3s;
+
+}
+
+#contacto button:hover{
+
+    background:#1b5e20;
+
+}
+
+#estadoEnvio{
+
+    margin-top:15px;
+
+    font-weight:bold;
+
+}/*======================================
+        DISEÑO RESPONSIVE
+======================================*/
+
+@media (max-width: 768px){
+
+    header h1{
+
+        font-size:28px;
+
+    }
+
+    .subtitulo{
+
+        font-size:16px;
+
+        padding:0 15px;
+
+    }
+
+    .menu{
+
+        gap:10px;
+
+        padding:10px;
+
+    }
+
+    .menu a{
+
+        font-size:15px;
+
+        padding:8px 10px;
+
+    }
+
+    .tarjeta{
+
+        width:95%;
+
+        padding:20px;
+
+    }
+
+    .botones{
+
+        display:flex;
+
+        flex-direction:column;
+
+        gap:12px;
+
+    }
+
+    .botones button{
+
+        width:100%;
+
+    }
+
+    input,
+    textarea,
+    button{
+
+        width:100%;
+
+        font-size:16px;
+
+    }
+
+}

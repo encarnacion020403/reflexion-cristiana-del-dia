@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Reflexión Cristiana del Día</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body id="inicio">
+    <header>
+
+        <h1>📖 Reflexión Cristiana</h1>
+
+        <p class="subtitulo">
+            Un mensaje para fortalecer tu fe cada día.
+        </p>
+
+    </header>
+<nav class="menu">
+
+    <a href="#inicio">🏠 Inicio</a>
+
+    <a href="#reflexion">📖 Reflexión</a>
+
+    <a href="favoritos.html">❤️ Favoritos</a>
+
+    <a href="#contacto">📩 Contacto</a>
+    
+    <a href="acerca.html">ℹ️ Acerca de</a>
+
+    <button id="modoOscuro">🌙</button>
+
+</nav>
+    <main>
+
+        <section class="tarjeta">
+
+            <h2>Versículo del Día</h2>
+
+            <p id="referencia"></p>
+
+            <blockquote id="versiculo"></blockquote>
+
+            <h2>Reflexión</h2>
+
+            <p id="reflexion"></p>
+
+            <div class="botones">
+
+                <button id="otraReflexion">
+                    📖 Ver otra reflexión
+                </button>
+
+                <button id="favorito">
+                    ❤️ Guardar favorita
+                </button>
+
+                <button id="compartir">
+                    📤 Compartir
+                </button>
+
+            </div>
+
+        </section>
+
+    <section id="contacto" class="tarjeta">
+
+    <h2>📩 Contáctanos</h2>
+
+    <p>
+        Si tienes alguna pregunta, sugerencia o petición de oración,
+        puedes escribirnos mediante este formulario.
+    </p>
+
+    <form id="formContacto">
+
+        <input
+            type="text"
+            id="nombre"
+            placeholder="Tu nombre"
+            required
+        >
+
+        <input
+            type="email"
+            id="email"
+            placeholder="Tu correo electrónico"
+            required
+        >
+
+        <input
+            type="text"
+            id="asunto"
+            placeholder="Asunto"
+            required
+        >
+
+        <textarea
+            id="mensaje"
+            rows="6"
+            placeholder="Escribe tu mensaje..."
+            required
+        ></textarea>
+
+        <button type="submit">
+
+            📧 Enviar mensaje
+
+        </button>
+
+    </form>
+
+    <p id="estadoEnvio"></p>
+
+</section>
+    </main>
+
+    <footer>
+
+        <p>
+            © 2026 Reflexión Cristiana | Todos los derechos reservados
+        </p>
+
+    </footer>
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <script src="reflexiones.js"></script>
+    <script src="script.js"></script>
+
+</body>
+
+</html>

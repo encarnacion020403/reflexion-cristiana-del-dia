@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mis Favoritos</title>
+
+    <link rel="stylesheet" href="estilos.css">
+
+</head>
+
+<body>
+
+<header>
+
+    <h1>❤️ Mis Reflexiones Favoritas</h1>
+
+    <p>Aquí aparecerá la última reflexión que hayas guardado.</p>
+
+</header>
+
+<main>
+
+    <section class="tarjeta">
+
+        <h2 id="favReferencia">
+
+            No hay ninguna reflexión guardada.
+
+        </h2>
+
+        <blockquote id="favVersiculo"></blockquote>
+
+        <p id="favReflexion"></p>
+
+        <br>
+
+        <a href="index.html">
+
+            ← Volver al inicio
+
+        </a>
+
+    </section>
+
+</main>
+
+<script>
+
+const favoritas = JSON.parse(localStorage.getItem("favoritas")) || [];
+
+const contenedor = document.querySelector(".tarjeta");
+
+if(favoritas.length === 0){
+
+    contenedor.innerHTML = `
+        <h2>❤️ Mis Reflexiones Favoritas</h2>
+        <p>No has guardado ninguna reflexión todavía.</p>
+        <br>
+        <a href="index.html">⬅ Volver al inicio</a>
+    `;
+
+}else{
+
+    let html = "<h2>❤️ Mis Reflexiones Favoritas</h2>";
+
+    favoritas.forEach((reflexion, indice)=>{
+
+        html += `
+
+        <hr>
+
+        <h3>${indice + 1}. ${reflexion.referencia}</h3>
+
+        <blockquote>
+
+            ${reflexion.versiculo}
+
+        </blockquote>
+
+        <p>
+
+            ${reflexion.reflexion}
+
+        </p>
+<button class="eliminarFavorita" data-indice="${indice}">
+    🗑 Eliminar
+</button>
+        `;
+
+    });
+
+    html += `
+
+        <br>
+
+        <a href="index.html">
+
+            ⬅ Volver al inicio
+
+        </a>
+
+    `;
+
+    contenedor.innerHTML = html;
+document.querySelectorAll(".eliminarFavorita").forEach(boton => {
+
+    boton.addEventListener("click", function () {
+
+        let indice = Number(this.dataset.indice);
+
+        favoritas.splice(indice, 1);
+
+        localStorage.setItem(
+            "favoritas",
+            JSON.stringify(favoritas)
+        );
+
+        location.reload();
+
+    });
+
+});
+}
+</script>
+
+</body>
+
+</html>
